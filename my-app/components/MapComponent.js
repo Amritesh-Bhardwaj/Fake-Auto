@@ -6,8 +6,8 @@ import React from 'react';
 const MapComponent = () => {
     // Coordinates for Thapar University, Patiala
     const thaparUniversityCoords = {
-        latitude: 30.3350, // Latitude
-        longitude: 76.3844, // Longitude
+        latitude: 30.3528, // Latitude
+        longitude: 76.3632, // Longitude
     };
 
     return (
