@@ -1,5 +1,6 @@
 import { Button, StyleSheet, Text, View } from "react-native";
 
+
 import SearchBarExample from "../components/SearchBarExample";
 import { useNavigation } from "@react-navigation/native";
 

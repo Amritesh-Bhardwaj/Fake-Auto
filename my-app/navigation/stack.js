@@ -21,7 +21,7 @@ export const HomeStack = () => {
         headerTitleStyle: {
           fontWeight: 'bold',
           alignItems: "center",
-          justifyContent: "center"
+          justifyContent: "center",
         },
       }}
     />
