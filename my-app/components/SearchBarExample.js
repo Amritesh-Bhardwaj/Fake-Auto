@@ -1,5 +1,7 @@
-import { FlatList, StyleSheet, Text, TextInput, View } from 'react-native';
+import { FlatList, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import React, { useState } from 'react';
+
+import { FontAwesome } from '@expo/vector-icons'; // Import FontAwesome from expo/vector-icons
 
 const SearchBarExample = () => {
     const [searchQuery, setSearchQuery] = useState('');
@@ -25,12 +27,20 @@ const SearchBarExample = () => {
 
     return (
         <View style={styles.container}>
-            <TextInput
-                style={styles.input}
-                placeholder="Where are you at??"
-                onChangeText={text => handleSearch(text)}
-                value={searchQuery}
-            />
+            <View style={styles.header}>
+                <TouchableOpacity style={styles.menuButton}>
+                    <FontAwesome name="bars" size={20} color="#fff" />
+                </TouchableOpacity>
+                <View style={styles.searchContainer}>
+                    <FontAwesome name="search" size={20} color="#777" style={styles.searchIcon} />
+                    <TextInput
+                        style={styles.input}
+                        placeholder="Where are you at??"
+                        onChangeText={text => handleSearch(text)}
+                        value={searchQuery}
+                    />
+                </View>
+            </View>
             <FlatList
                 data={data}
                 renderItem={({ item }) => (
@@ -49,14 +59,36 @@ const styles = StyleSheet.create({
         flex: 1,
         padding: 10,
     },
-    input: {
-        backgroundColor: '#fff',
-        height: 40,
-        // borderColor: 'gray',
-        // borderWidth: 1,
+    header: {
+        flexDirection: 'row',
+        alignItems: 'center',
         marginBottom: 10,
-        paddingHorizontal: 10,
+        marginTop: 20,
+    },
+    menuButton: {
+        width: 40,
+        height: 40,
+        borderRadius: 20,
+        backgroundColor: '#ccc',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginRight: 5, 
+    },
+    searchContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        flex: 1,
+        borderWidth: 1,
+        borderColor: '#ccc',
         borderRadius: 30,
+        paddingHorizontal: 10,
+    },
+    searchIcon: {
+        marginRight: 10,
+    },
+    input: {
+        flex: 1,
+        height: 40,
     },
     itemContainer: {
         paddingVertical: 5,
