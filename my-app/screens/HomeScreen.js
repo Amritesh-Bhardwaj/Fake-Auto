@@ -8,7 +8,7 @@ const HomeScreen = () => {
             </Text>
         </View>
 
-    )
+    );
 
 
 
