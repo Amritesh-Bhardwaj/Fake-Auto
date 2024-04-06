@@ -1,37 +1,86 @@
-import { Button, Text, View } from "react-native";
-import { Image, ImageBackground, ScrollView, StyleSheet } from "react-native";
-
+import React, { useState } from "react";
+import {
+  Button,
+  Text,
+  View,
+  TextInput,
+  StyleSheet,
+  TouchableOpacity,
+} from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 const LoginScreen = () => {
   const navigation = useNavigation();
 
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = () => {
+    // Implement your login logic here (e.g., authenticate with backend)
+    console.log("Username:", username);
+    console.log("Password:", password);
+    // Based on successful login, navigate to Home Page
+    navigation.navigate("Home Page");
+  };
+
   return (
-    <ScrollView>
-      <ImageBackground source={{ uri: 'https://images.pexels.com/photos/19845819/pexels-photo-19845819/free-photo-of-tall-grasses-blowing-in-the-wind-against-a-blue-sky.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load' }}
-        style={{ width: 360, height: 800 }}>
-        <View style={styles.container}>
-          <Text style={styles.text}>Login</Text>
-          <Button tit4le="LOG IN" onPress={() => navigation.navigate("Home Page")}></Button>
-        </View>
-      </ImageBackground>
-    </ScrollView>
+    <View style={styles.outerContainer}>
+      <View style={styles.innerContainer}>
+        <Text style={styles.text}>Login</Text>
+        <TextInput
+          style={styles.textInput}
+          placeholder="Username"
+          value={username}
+          onChangeText={setUsername}
+        />
+        <TextInput
+          style={styles.textInput}
+          placeholder="Password"
+          value={password}
+          onChangeText={setPassword}
+          secureTextEntry={true} // Hide password characters
+        />
+        <Button title="LOG IN" onPress={handleLogin} />
+        <TouchableOpacity onPress={() => navigation.navigate("SignUp")}>
+          <Text style={styles.forgotPasswordText}>New User? Sign Up</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
   );
 };
+
 export default LoginScreen;
 
-
 const styles = StyleSheet.create({
-  container: {
+  outerContainer: {
     flex: 1,
-    backgroundColor: '#fff',
-    margin: 20,
+    backgroundColor: "#CCC5B9", // Lightest background color
+  },
+  innerContainer: {
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 40,
+    backgroundColor: "#403D39", // Darker background color
     borderRadius: 20,
+    marginLeft: 10,
+    marginRight: 10,
+    marginTop: 100
   },
   text: {
-    color: 'red',
+    color: "#EF8257", // Orange color
     fontSize: 44,
-    textAlign: 'left',
-    padding: 15,
-  }
+    marginBottom: 20, // Add space below title
+  },
+  textInput: {
+    width: "100%",
+    padding: 10,
+    marginBottom: 10,
+    backgroundColor: "#252422", // Darkest background color
+    borderRadius: 5,
+    color: "#fff", // White color for text input
+  },
+  forgotPasswordText: {
+    marginTop: 10, // Add space above text
+    color: "#EF8257", // Orange color
+  },
 });
