@@ -62,9 +62,9 @@ const styles = StyleSheet.create({
     padding: 40,
     backgroundColor: "#403D39", // Darker background color
     borderRadius: 20,
-    marginLeft: 10,
-    marginRight: 10,
-    marginTop: 100
+    marginLeft: 20,
+    marginRight: 20,
+    marginTop: 200,
   },
   text: {
     color: "#EF8257", // Orange color
