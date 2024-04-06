@@ -1,5 +1,6 @@
 import { Button, StyleSheet, Text, View } from "react-native";
 
+import MapComponent from "../components/MapComponent";
 import SearchBarExample from "../components/SearchBarExample";
 import { useNavigation } from "@react-navigation/native";
 
@@ -10,7 +11,7 @@ const HomeScreen = () => {
 				<SearchBarExample />
 			</View>
 			<View style={styles.container}>
-				{/* <MapComponent/> */}
+				<MapComponent />
 			</View>
 		</>
 	);
@@ -33,11 +34,15 @@ const styles = StyleSheet.create({
 		marginLeft: 20,
 		marginRight: 20,
 		// width: 10,
-        flexDirection: 'row',
+		flexDirection: "row",
 		height: 450,
 		backgroundColor: "#667790",
 		justifyContent: "center",
-        borderRadius: 50,
+		border: 20,
+		borderColor: "black",
+		borderStyle: "solid",
+		overflow: "hidden",
+		borderRadius: 50,
 		alignItems: "center",
 	},
 });

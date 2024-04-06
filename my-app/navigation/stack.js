@@ -1,7 +1,8 @@
-import { createStackNavigator } from "@react-navigation/stack";
 import HomeScreen from "../screens/HomeScreen";
 import LoginScreen from "../screens/LoginScreen.js";
 import SignUpScreen from "../screens/SignUpScreen.js";
+import { createStackNavigator } from "@react-navigation/stack";
+
 const Stack = createStackNavigator();
 
 export const HomeStack = () => {
@@ -15,7 +16,6 @@ export const HomeStack = () => {
         title: 'Fake Auto',
         headerStyle: {
           backgroundColor: '#f4511e',
-          
         },
         headerTintColor: '#fff',
         headerTitleStyle: {
