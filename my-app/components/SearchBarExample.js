@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#ccc',
         justifyContent: 'center',
         alignItems: 'center',
-        marginRight: 5, 
+        marginRight: 5,
     },
     searchContainer: {
         flexDirection: 'row',

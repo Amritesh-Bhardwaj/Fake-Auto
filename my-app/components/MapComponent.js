@@ -17,8 +17,8 @@ const MapComponent = () => {
                 initialRegion={{
                     latitude: thaparUniversityCoords.latitude,
                     longitude: thaparUniversityCoords.longitude,
-                    latitudeDelta: 0.02,
-                    longitudeDelta: 0.02,
+                    latitudeDelta: 0.01,
+                    longitudeDelta: 0.01,
                 }}
             >
                 <Marker
