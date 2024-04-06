@@ -1,6 +1,5 @@
 import { Button, StyleSheet, Text, View } from "react-native";
 
-import MapComponent from "../components/MapComponent";
 import SearchBarExample from "../components/SearchBarExample";
 import { useNavigation } from "@react-navigation/native";
 

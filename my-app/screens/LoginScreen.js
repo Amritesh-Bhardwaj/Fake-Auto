@@ -30,17 +30,22 @@ const LoginScreen = () => {
         <TextInput
           style={styles.textInput}
           placeholder="Username"
+          placeholderTextColor = '#ffff'
           value={username}
           onChangeText={setUsername}
         />
         <TextInput
           style={styles.textInput}
           placeholder="Password"
+          placeholderTextColor = '#ffff'
           value={password}
           onChangeText={setPassword}
           secureTextEntry={true} // Hide password characters
         />
-        <Button title="LOG IN" onPress={handleLogin} />
+        <TouchableOpacity onPress={handleLogin}>
+            <Text style = {styles.button}>LOGIN</Text>
+        </TouchableOpacity>
+
         <TouchableOpacity onPress={() => navigation.navigate("SignUp")}>
           <Text style={styles.forgotPasswordText}>New User? Sign Up</Text>
         </TouchableOpacity>
@@ -83,4 +88,10 @@ const styles = StyleSheet.create({
     marginTop: 10, // Add space above text
     color: "#EF8257", // Orange color
   },
+  button:{
+    borderRadius: 5,
+    backgroundColor: '#2196F3',
+    color: '#fff',
+    padding: 10
+  }
 });
