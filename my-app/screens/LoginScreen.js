@@ -12,7 +12,7 @@ const LoginScreen = () => {
         style={{ width: 360, height: 800 }}>
         <View style={styles.container}>
           <Text style={styles.text}>Login</Text>
-          <Button tit4le="LOG IN" onPress={() => navigation.navigate("Home Page")}></Button>
+          <Button title="LOG IN" onPress={() => navigation.navigate("Home Page")}></Button>
         </View>
       </ImageBackground>
     </ScrollView>
