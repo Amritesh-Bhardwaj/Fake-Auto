@@ -11,7 +11,7 @@ const HomeScreen = () => {
 				<SearchBarExample />
 			</View>
 			<View style={styles.container}>
-				<MapComponent/>
+				{/* <MapComponent/> */}
 			</View>
 		</>
 	);
