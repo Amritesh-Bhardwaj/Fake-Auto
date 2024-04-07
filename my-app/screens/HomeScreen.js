@@ -1,13 +1,12 @@
 import { Button, StyleSheet, Text, View } from "react-native";
-
-import MapComponent from "../components/MapComponent";
 import SearchBarExample from "../components/SearchBarExample";
+import MapComponent from "../components/MapComponent";
 import { useNavigation } from "@react-navigation/native";
 
 const HomeScreen = () => {
 	return (
 		<>
-			<View>
+			<View style={styles.search}>
 				<SearchBarExample />
 			</View>
 			<View style={styles.container}>
@@ -38,13 +37,15 @@ const styles = StyleSheet.create({
 		height: 450,
 		backgroundColor: "#667790",
 		justifyContent: "center",
-		border: 20,
-		borderColor: "black",
-		borderStyle: "solid",
+    shadowColor: "#ccc", // Shadow color
+    shadowOffset: { width: 0, height: 2 }, // Shadow offset
+    shadowOpacity: 0.2, // Shadow opacity
+    shadowRadius: 4,
 		overflow: "hidden",
 		borderRadius: 50,
 		alignItems: "center",
 	},
+  
 });
 
 export default HomeScreen;
